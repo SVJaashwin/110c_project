@@ -38,19 +38,6 @@ function modelLoaeded() {
     console.log("Model is loaeded")
 }
 
-function gotResult(error, result) {
-    if (error) {
-        console.log("error", error);
-    } else {
-        console.log(result);
-        document.getElementById("result_emotion_name_1").innerHTML = result[0].label;
-        document.getElementById("result_emotion_name_2").innerHTML = result[1].label;
-
-        predication_1 = result[0].label;
-        predication_2 = result[1].label;
-    }
-}
-
 function check() {
     var img = document.getElementById("result_phot");
     classifier.classify(img, gotResult);
