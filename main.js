@@ -49,28 +49,27 @@ function gotResult(error, result) {
         console.log("error", error);
     } else {
         console.log(result);
-        document.getElementById("result_emotion_name_1").innerHTML = result[0].label;
-        document.getElementById("result_emotion_name_2").innerHTML = result[1].label;
-
+        document.getElementById("result_hand_name_1").innerHTML = result[0].label;
+        document.getElementById("result_hand_name_2").innerHTML = result[1].label;
         predication_1 = result[0].label;
         predication_2 = result[1].label;
 
         speak();
 
         if (result[0].label == "best") {
-            document.getElementById("result_hand_name_1").innerHTML = "&#128522";
+            document.getElementById("update_gesture_1").innerHTML = "&#128077";
         } else if (result[0].label == "victory") {
-            document.getElementById("result_hand_name_1").innerHTML = "&#128546";
+            document.getElementById("update_gesture_1").innerHTML = "&#9996";
         } else if (result[0].label == "amazing") {
-            document.getElementById("result_hand_name_1").innerHTML = "&#128545;";
+            document.getElementById("update_gesture_1").innerHTML = "&#128076;";
         }
 
         if (result[1].label == "best") {
-            document.getElementById("result_hand_name_2").innerHTML = "&#128522";
+            document.getElementById("update_gesture_2").innerHTML = "&#128077";
         } else if (result[1].label == "victory") {
-            document.getElementById("result_hand_name_2").innerHTML = "&#128546";
+            document.getElementById("update_gesture_2").innerHTML = "&#9996";
         } else if (result[1].label == "amazing") {
-            document.getElementById("result_hand_name_2").innerHTML = "&#128545;";
+            document.getElementById("update_gesture_2").innerHTML = "&#128076;";
         }
     }
 }
